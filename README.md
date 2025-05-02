@@ -1,16 +1,49 @@
-# first_app
+#Sara Mostafa Ahmed 
+#ID:230476662
 
-A new Flutter project.
+# 🌳 Tree App- Flutter Application
 
-## Getting Started
+## Overview
+The Tree App is a Flutter application that allows users to create and view tree-related posts with images, titles, and descriptions. It features a clean UI with image selection capabilities, a profile section, and interactive elements like favoriting posts.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Post Creation**
+  - Add multiple images from gallery
+  - Write titles and descriptions
+  - Preview selected images
+- **Profile Management**
+  - Upload profile pictures (camera/gallery)
+  - View user information
+- **Interactive Elements**
+  - Favorite posts with ♥
+  - Share functionality (UI ready)
+- **Beautiful UI**
+  - Clean Material Design
+  - Responsive layout
+  - Seasonal tree displays
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Key Components
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **1. First Screen (firstscreen.dart)**
+  - Allows users to:
+    - Select multiple images from gallery
+    - Enter a title and description
+    - Save the post
+   
+- **2. Home Page (home_page.dart)**
+  - Displays:
+    - The created post with title and description
+    - Selected images in a grid
+    - Default content if no post is created
+    - Navigation to profile page
+
+- **3. Profile Page (profile_page.dart)**
+  - Features:
+    - Profile picture upload (camera or gallery)
+    - Profile picture deletion
+    - User information display
+   
+- **4. Widgets**
+  - FavoriteWidget: Toggleable favorite button
+  - MySeason: Displays seasonal tree images with labels
