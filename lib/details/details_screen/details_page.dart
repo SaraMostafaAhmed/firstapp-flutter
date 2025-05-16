@@ -8,13 +8,15 @@ import 'package:provider/provider.dart';
 import '../../profile/profile_page/profile_page.dart';
 import '../../profile/user_model.dart';
 import '../details_widget/details_widget.dart';
+
 class DetailsPage extends StatelessWidget {
   //final String? title;
   //final String? body;
   //final List<File>? image;
   const DetailsPage({
     //this.image, this.title, this.body,
-    super.key});
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,19 @@ class DetailsPage extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => ProfilePage()),
               );
             },
-            icon:profileImage == null ? Icon(Icons.account_box) : CircleAvatar(child: ClipOval(child: Image.file(profileImage , height: 50, width: 50,fit: BoxFit.cover,),),),
+            icon:
+                profileImage == null
+                    ? Icon(Icons.account_box)
+                    : CircleAvatar(
+                      child: ClipOval(
+                        child: Image.file(
+                          profileImage,
+                          height: 50,
+                          width: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
           ),
         ],
         centerTitle: true,
@@ -40,13 +54,18 @@ class DetailsPage extends StatelessWidget {
         child: Column(
           children: [
             //image == null || image!.isEmpty ? Image.asset("assets/tree2.jpg"):
-            Image.file(items.selectedItem!.images.first,height: 300,fit: BoxFit.cover,width: double.infinity,),
+            Image.file(
+              items.selectedItem!.images.first,
+              height: 300,
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
 
               children: [
-                Favoritwidget(),
+                Favoritwidget(index: items.items.indexOf(items.selectedItem!)),
                 IconButton(onPressed: () {}, icon: Icon(Icons.share)),
               ],
             ),
@@ -55,29 +74,35 @@ class DetailsPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 textAlign: TextAlign.justify,
-                  items.selectedItem!.body
+                items.selectedItem!.body,
               ),
             ),
-           // image == null || image!.isEmpty
-           //     ? Row(
-           //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-           //       children: [
-           //         MySeason(text: "spring", url: "assets/tree3.jpg"),
-           //         MySeason(text: "Fall", url: "assets/tree1.jpg"),
-           //       ],
-           //     ) :
+            // image == null || image!.isEmpty
+            //     ? Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //       children: [
+            //         MySeason(text: "spring", url: "assets/tree3.jpg"),
+            //         MySeason(text: "Fall", url: "assets/tree1.jpg"),
+            //       ],
+            //     ) :
             SizedBox(
-              height:500 ,
-                  child: GridView.builder(
-                    itemCount: items.selectedItem!.images!.length,
-                    itemBuilder: (context, index) => Image.file(items.selectedItem!.images![index],height: 200,width: 200,fit: BoxFit.cover,),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
+              height: 500,
+              child: GridView.builder(
+                itemCount: items.selectedItem!.images!.length,
+                itemBuilder:
+                    (context, index) => Image.file(
+                      items.selectedItem!.images![index],
+                      height: 200,
+                      width: 200,
+                      fit: BoxFit.cover,
                     ),
-                  ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
                 ),
+              ),
+            ),
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:first_app/add_item/add_item_screen.dart';
 import 'package:first_app/add_item/item_model.dart';
 import 'package:first_app/dashboard/nav_bar.dart';
+import 'package:first_app/favorite/favorite_model.dart';
 import 'package:first_app/profile/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => UserModel()),
         ChangeNotifierProvider(create: (context) => ItemModel()),
+        ChangeNotifierProvider(create: (context) => FavoriteModel()),
       ],
       child: const MyApp(),
     ),

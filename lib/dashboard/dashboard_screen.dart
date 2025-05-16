@@ -2,6 +2,8 @@ import 'package:first_app/add_item/item.dart';
 import 'package:first_app/add_item/item_model.dart';
 import 'package:first_app/details/details_screen/details_page.dart';
 import 'package:first_app/add_item/add_item_screen.dart';
+import 'package:first_app/details/details_widget/details_widget.dart';
+import 'package:first_app/favorite/favorite_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../profile/profile_page/profile_page.dart';
@@ -76,7 +78,18 @@ class DashboardScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(items.items[index].title),
-                      IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
+                      Favoritwidget(
+                        index: items.items.indexOf(items.items[index]),
+                      ),
+                      //IconButton(
+                      //  onPressed: () {
+                      //    Provider.of<FavoriteModel>(
+                      //      context,
+                      //      listen: false,
+                      //    ).add(items.items[index]);
+                      //  },
+                      //  icon: Icon(Icons.favorite),
+                      //),
                     ],
                   ),
                 ],
