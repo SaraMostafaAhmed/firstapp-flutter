@@ -3,6 +3,8 @@ import 'package:first_app/favorite/favorite_screen.dart';
 import 'package:first_app/profile/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
 
+import '../quote/quote_screen.dart';
+
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
 
@@ -17,7 +19,12 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:
-          [DashboardScreen(), FavoriteScreen(), ProfilePage()][_selectedIndex],
+          [
+            DashboardScreen(),
+            QuoteScreen(),
+            FavoriteScreen(),
+            ProfilePage(),
+          ][_selectedIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (index) {
           setState(() {
@@ -30,6 +37,7 @@ class _NavBarState extends State<NavBar> {
             icon: Icon(Icons.dashboard),
             label: "dashboard",
           ),
+          NavigationDestination(icon: Icon(Icons.format_quote), label: "quote"),
           NavigationDestination(icon: Icon(Icons.favorite), label: "favorite"),
           NavigationDestination(icon: Icon(Icons.person), label: "profile"),
         ],

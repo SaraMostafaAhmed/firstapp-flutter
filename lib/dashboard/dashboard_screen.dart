@@ -16,10 +16,16 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final profileImage = Provider.of<UserModel>(context).user?.image;
     final items = Provider.of<ItemModel>(context);
+    final count=Provider.of<FavoriteModel>(context);;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Dashboard"),
         actions: [
+          Stack(children: [
+            IconButton(onPressed: (){}, icon: Icon(Icons.favorite,color: Colors.red,)),
+            Text("${count.fav.length}"),
+          ],),
           IconButton(
             onPressed: () {
               Navigator.push(
@@ -43,7 +49,9 @@ class DashboardScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: GridView.builder(
+      body:items.items.isEmpty
+          ?Center(child: Text("No items"),)
+          : GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
