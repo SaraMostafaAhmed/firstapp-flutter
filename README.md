@@ -38,13 +38,6 @@ lib/
 
 ````
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Flutter SDK (latest stable version)  
-- Dart SDK  
-- Android Studio/Xcode (for emulator/simulator)  
 
 ### Installation
 
