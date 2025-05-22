@@ -37,20 +37,3 @@ lib/
 └── main.dart            # App entry point
 
 ````
-
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
-````
-2. Install dependencies:
-   ```bash
-   flutter pub get
-````
-3. Run the app:
-   ```bash
-   flutter run
-````
